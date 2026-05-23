@@ -17,7 +17,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
 
-	"github.com/trishal/fx-settlement/internal/fx"
+	"github.com/mtrishal123/embedded-fx-service/internal/fx"
 )
 
 // -------------------------------------------------------------------

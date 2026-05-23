@@ -23,9 +23,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/trishal/fx-settlement/internal/api"
-	"github.com/trishal/fx-settlement/internal/fx"
-	"github.com/trishal/fx-settlement/internal/settlement"
+	"github.com/mtrishal123/embedded-fx-service/internal/api"
+	"github.com/mtrishal123/embedded-fx-service/internal/fx"
+	"github.com/mtrishal123/embedded-fx-service/internal/settlement"
 )
 
 func main() {

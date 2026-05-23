@@ -18,8 +18,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/shopspring/decimal"
 
-	"github.com/trishal/fx-settlement/internal/fx"
-	"github.com/trishal/fx-settlement/internal/settlement"
+	"github.com/mtrishal123/embedded-fx-service/internal/fx"
+	"github.com/mtrishal123/embedded-fx-service/internal/settlement"
 )
 
 // -------------------------------------------------------------------
