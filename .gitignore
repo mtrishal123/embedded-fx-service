@@ -1,0 +1,33 @@
+# Compiled binaries
+/fx-settlement
+/server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries and coverage output
+*.test
+*.out
+coverage.txt
+coverage.html
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directory (we use modules, not vendoring)
+/vendor/
+
+# Environment / secrets — never commit real DSNs or credentials
+.env
+.env.local
+*.local
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
