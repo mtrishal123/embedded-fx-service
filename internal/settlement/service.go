@@ -1,10 +1,10 @@
 // Package settlement manages the lifecycle of an FX settlement.
 //
 // A settlement is what happens AFTER a conversion is agreed:
-//   1. PENDING   — created, amounts locked
-//   2. PROCESSING — funds being moved across accounts
-//   3. SETTLED   — complete, irreversible
-//   4. FAILED    — something went wrong, needs investigation
+//  1. PENDING   — created, amounts locked
+//  2. PROCESSING — funds being moved across accounts
+//  3. SETTLED   — complete, irreversible
+//  4. FAILED    — something went wrong, needs investigation
 //
 // This lifecycle mirrors what Atomic would need when a partner (like Aspire
 // or Bolt) initiates a cross-currency transaction on behalf of their users.
@@ -37,21 +37,21 @@ const (
 // Settlement is the core domain object. Think of it as a trade ticket
 // that records everything about one cross-currency money movement.
 type Settlement struct {
-	ID              string          // UUID
-	PartnerID       string          // which Atomic partner initiated this (e.g. "bolt", "aspire")
-	UserID          string          // end user within that partner's platform
-	SourceAmount    decimal.Decimal // how much they sent
-	SourceCurrency  fx.Currency
-	TargetAmount    decimal.Decimal // how much they receive
-	TargetCurrency  fx.Currency
-	AppliedRate     decimal.Decimal // rate used at time of conversion
-	MidMarketRate   decimal.Decimal // for transparency/reporting
-	SpreadCost      decimal.Decimal // revenue to Atomic from this settlement
-	Status          Status
-	FailureReason   string    // populated only if Status == FAILED
-	CreatedAt       time.Time
-	UpdatedAt       time.Time
-	SettledAt       *time.Time // pointer — nil until actually settled
+	ID             string          // UUID
+	PartnerID      string          // which Atomic partner initiated this (e.g. "bolt", "aspire")
+	UserID         string          // end user within that partner's platform
+	SourceAmount   decimal.Decimal // how much they sent
+	SourceCurrency fx.Currency
+	TargetAmount   decimal.Decimal // how much they receive
+	TargetCurrency fx.Currency
+	AppliedRate    decimal.Decimal // rate used at time of conversion
+	MidMarketRate  decimal.Decimal // for transparency/reporting
+	SpreadCost     decimal.Decimal // revenue to Atomic from this settlement
+	Status         Status
+	FailureReason  string // populated only if Status == FAILED
+	CreatedAt      time.Time
+	UpdatedAt      time.Time
+	SettledAt      *time.Time // pointer — nil until actually settled
 }
 
 // -------------------------------------------------------------------

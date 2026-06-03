@@ -1,12 +1,13 @@
 // Package api contains the HTTP handlers for the FX settlement service.
 //
 // Endpoints:
-//   POST /v1/settlements           — create a new settlement
-//   GET  /v1/settlements/{id}      — get settlement by ID
-//   POST /v1/settlements/{id}/process — process (settle) a settlement
-//   GET  /v1/partners/{id}/settlements — list settlements for a partner
-//   GET  /v1/rates                  — list current FX rates
-//   GET  /healthz                   — health check (for k8s liveness probe)
+//
+//	POST /v1/settlements           — create a new settlement
+//	GET  /v1/settlements/{id}      — get settlement by ID
+//	POST /v1/settlements/{id}/process — process (settle) a settlement
+//	GET  /v1/partners/{id}/settlements — list settlements for a partner
+//	GET  /v1/rates                  — list current FX rates
+//	GET  /healthz                   — health check (for k8s liveness probe)
 package api
 
 import (
