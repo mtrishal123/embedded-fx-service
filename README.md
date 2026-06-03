@@ -1,6 +1,8 @@
 # FX Settlement Microservice
 
-A production-grade multi-currency settlement service built in Go — designed to support the kind of cross-border investing infrastructure Atomic runs for partners like Bolt, Aspire, and their European expansion.
+[![CI](https://github.com/mtrishal123/embedded-fx-service/actions/workflows/ci.yml/badge.svg)](https://github.com/mtrishal123/embedded-fx-service/actions/workflows/ci.yml)
+
+A multi-currency settlement service built in Go — designed to support the kind of cross-border investing infrastructure Atomic runs for partners like Bolt, Aspire, and their European expansion.
 
 ## What it does
 
