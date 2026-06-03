@@ -1,0 +1,41 @@
+# docker-compose.yml
+#
+# Spins up the FX settlement service together with a PostgreSQL database.
+# The migration in ./migrations is applied automatically on first start
+# (Postgres runs any *.sql found in /docker-entrypoint-initdb.d).
+#
+#   docker compose up --build
+#
+# Then: curl http://localhost:8080/healthz
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: fx
+      POSTGRES_PASSWORD: fx
+      POSTGRES_DB: fx
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fx -d fx"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    environment:
+      PORT: "8080"
+      DB_DSN: "host=db port=5432 user=fx password=fx dbname=fx sslmode=disable"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
